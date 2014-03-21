@@ -76,7 +76,7 @@ alias workhorse='ssh -Y bxchen@workhorse.bsd.uchicago.edu'
 alias hercules='ssh -Y bxchen@hercules.bsd.uchicago.edu'
 alias nether='ssh -Y bxchen@nether.bsd.uchicago.edu'
 alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
-alias titanomachy='ssh -Y bxchen@titanomachy.uchicago.edu'
+alias titanomachy='ssh -Y bxchen@titanomachy.bsd.uchicago.edu'
 
 #--------------------
 # Key bindings
