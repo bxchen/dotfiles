@@ -14,4 +14,3 @@ execute pathogen#infect()
 
 " .cu file
 au BufNewFile,BufRead *.cu set ft=cu
-
