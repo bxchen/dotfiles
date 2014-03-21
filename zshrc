@@ -70,12 +70,14 @@ elif [[ $platform == 'Darwin' ]]; then
 	alias ll="ls -lhG"
 fi
 
-alias siraf='ssh -Y bxchen@siraf-login'
-alias workhorse='ssh -Y bxchen@workhorse'
-alias hercules='ssh -Y bxchen@hercules'
-alias nether='ssh -Y bxchen@nether'
+alias pet1='ssh -Y bxchen@pet1.bsd.uchicago.edu'
+alias siraf='ssh -Y bxchen@siraf-login.bsd.uchicago.edu'
+alias workhorse='ssh -Y bxchen@workhorse.bsd.uchicago.edu'
+alias hercules='ssh -Y bxchen@hercules.bsd.uchicago.edu'
+alias nether='ssh -Y bxchen@nether.bsd.uchicago.edu'
 alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
-alias titanomachy='ssh -Y bxchen@titanomachy'
+alias titanomachy='ssh -Y bxchen@titanomachy.uchicago.edu'
+
 #--------------------
 # Key bindings
 #--------------------
