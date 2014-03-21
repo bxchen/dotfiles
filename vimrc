@@ -14,3 +14,6 @@ syntax on
 
 " .cu file
 au BufNewFile,BufRead *.cu set ft=cu
+
+" cursor highlighting
+:set cursorline

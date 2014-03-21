@@ -13,13 +13,17 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+#--------------------
 # set up the prompt
+#--------------------
 autoload -U promptinit
 promptinit
 
 autoload -U colors && colors
 
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:%{$reset_color%}%2~%{$reset_color%}% [%{$fg_no_bold[green]%}%*%{$reset_color%}]%# "
+## add git-prompt
+source /home/bxchen/dotfiles/git-prompt/zshrc.sh
+PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:%{$reset_color%}%2~%{$reset_color%}$(git_super_status)% [%{$fg_no_bold[green]%}%*%{$reset_color%}]%# "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 # autocompletion with an arrow-key driven interface
