@@ -22,8 +22,10 @@ promptinit
 autoload -U colors && colors
 
 ## add git-prompt
+#fpath=(~/dotfiles/git-prompt $fpath)
 source ~/dotfiles/git-prompt/zshrc.sh
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:%{$reset_color%}%2~%{$reset_color%}$(git_super_status)% [%{$fg_no_bold[green]%}%*%{$reset_color%}]%# "
+local gitprompt='$(git_super_status)'
+PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:%{$reset_color%}%2~%{$reset_color%}${gitprompt}% [%{$fg_no_bold[green]%}%*%{$reset_color%}]%# "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 # autocompletion with an arrow-key driven interface
