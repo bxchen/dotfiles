@@ -54,8 +54,17 @@ setopt pushdminus
 #--------------------
 #  Alias
 #--------------------
-alias ls="ls -F"
-alias ll="ls -lh"
+# get the platform of the current machine
+platform=$(uname);
+# If the platform is Linux, try an apt-get to install zsh and then recurse
+if [[ $platform == 'Linux' ]]; then
+	alias ls="ls --color -F"
+	alias ll="ls -color -lh"
+# If the platform is OS X, tell the user to install zsh :)
+elif [[ $platform == 'Darwin' ]]; then
+	alias ls="ls -GF"
+	alias ll="ls -lhG"
+fi
 
 alias siraf='ssh -Y bxchen@siraf-login'
 alias titanomachy='ssh -Y bxchen@titanomachy'
