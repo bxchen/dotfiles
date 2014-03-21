@@ -14,7 +14,7 @@ compinit
 # End of lines added by compinstall
 
 #--------------------
-# set up the prompt
+#  Prompt
 #--------------------
 autoload -U promptinit
 promptinit
@@ -72,13 +72,13 @@ elif [[ $platform == 'Darwin' ]]; then
 	alias ll="ls -lhG"
 fi
 
-alias pet1='ssh -Y bxchen@pet1.bsd.uchicago.edu'
-alias siraf='ssh -Y bxchen@siraf-login.bsd.uchicago.edu'
-alias workhorse='ssh -Y bxchen@workhorse.bsd.uchicago.edu'
-alias hercules='ssh -Y bxchen@hercules.bsd.uchicago.edu'
-alias nether='ssh -Y bxchen@nether.bsd.uchicago.edu'
-alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
-alias titanomachy='ssh -Y bxchen@titanomachy.bsd.uchicago.edu'
+alias pet1='ssh -X bxchen@pet1.bsd.uchicago.edu'
+alias siraf='ssh -X bxchen@siraf-login.bsd.uchicago.edu'
+alias workhorse='ssh -X bxchen@workhorse.bsd.uchicago.edu'
+alias hercules='ssh -X bxchen@hercules.bsd.uchicago.edu'
+alias nether='ssh -X bxchen@nether.bsd.uchicago.edu'
+alias midway='ssh -X bxchen@midway.rcc.uchicago.edu'
+alias titanomachy='ssh -X bxchen@titanomachy.bsd.uchicago.edu'
 
 #--------------------
 # Key bindings
