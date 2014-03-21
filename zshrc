@@ -54,9 +54,15 @@ setopt pushdminus
 #--------------------
 #  Alias
 #--------------------
-alias ls="ls --color -F"
-alias ll="ls --color -lh"
+alias ls="ls -F"
+alias ll="ls -lh"
 
+alias siraf='ssh -Y bxchen@siraf-login'
+alias titanomachy='ssh -Y bxchen@titanomachy'
+alias nether='ssh -Y bxchen@nether'
+alias hercules='ssh -Y bxchen@hercules'
+alias workhorse='ssh -Y bxchen@workhorse'
+alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
 #--------------------
 # Key bindings
 #--------------------
