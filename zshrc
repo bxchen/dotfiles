@@ -66,19 +66,20 @@ platform=$(uname);
 if [[ $platform == 'Linux' ]]; then
 	alias ls="ls --color -F"
 	alias ll="ls -color -lh"
+    alias siraf='ssh -X bxchen@siraf-login.bsd.uchicago.edu'
+    alias workhorse='ssh -X bxchen@workhorse.bsd.uchicago.edu'
+    alias hercules='ssh -X bxchen@hercules.bsd.uchicago.edu'
+    alias nether='ssh -X bxchen@nether.bsd.uchicago.edu'
+    alias titanomachy='ssh -X bxchen@titanomachy.bsd.uchicago.edu'
 # If the platform is OS X, tell the user to install zsh :)
 elif [[ $platform == 'Darwin' ]]; then
 	alias ls="ls -GF"
 	alias ll="ls -lhG"
+    alias siraf='ssh -X -p 22210 bxchen@siraf-login.bsd.uchicago.edu'
 fi
 
 alias pet1='ssh -X bxchen@pet1.bsd.uchicago.edu'
-alias siraf='ssh -X bxchen@siraf-login.bsd.uchicago.edu'
-alias workhorse='ssh -X bxchen@workhorse.bsd.uchicago.edu'
-alias hercules='ssh -X bxchen@hercules.bsd.uchicago.edu'
-alias nether='ssh -X bxchen@nether.bsd.uchicago.edu'
 alias midway='ssh -X bxchen@midway.rcc.uchicago.edu'
-alias titanomachy='ssh -X bxchen@titanomachy.bsd.uchicago.edu'
 
 #--------------------
 # Key bindings
