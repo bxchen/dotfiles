@@ -7,6 +7,9 @@
 "au BufNewFile,BufRead *.cu set ft=cu
 
 set cursorline      " cursor highlighting
+:hi CursorLine   cterm=NONE ctermbg=lightgray ctermfg=white guibg=lightgray guifg=white
+":hi CursorColumn cterm=NONE ctermbg=gray ctermfg=white guibg=gray guifg=white
+:nnoremap <Leader>c :set cursorline! <CR>
 
 set whichwrap=b,s,<,>,[,] " traverse line
 
