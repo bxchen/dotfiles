@@ -126,8 +126,8 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 
 # history search
-[[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"    history-beginning-search-backward
-[[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}"  history-beginning-search-forward
+[[ -n "${key[Up]}"   ]]  && bindkey  "${key[Up]}"    history-search-backward
+[[ -n "${key[Down]}" ]]  && bindkey  "${key[Down]}"  history-search-forward
 
 #bindkey  "^[[A"  history-beginning-search-backward
 #bindkey  "^[[B"  history-beginning-search-forward

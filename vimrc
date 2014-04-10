@@ -65,7 +65,7 @@ set showmatch       " When a bracket is inserted, briefly jump to the matching
                     " screen. The time to show the match can be set with
                     " 'matchtime'.
  
-set hlsearch        " When there is a previous search pattern, highlight all
+"set hlsearch        " When there is a previous search pattern, highlight all
                     " its matches.
  
 set incsearch       " While typing a search command, show immediately where the
