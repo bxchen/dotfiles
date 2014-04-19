@@ -65,7 +65,7 @@ platform=$(uname);
 # If the platform is Linux, try an apt-get to install zsh and then recurse
 if [[ $platform == 'Linux' ]]; then
 	alias ls="ls --color -F"
-	alias ll="ls -color -lh"
+	alias ll="ls --color -lh"
     alias workhorse='ssh -X workhorse'
     alias hercules='ssh -X hercules'
     alias nether='ssh -X nether'
