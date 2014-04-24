@@ -13,6 +13,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# prevent zsh from killing all background jobs upon exiting the shell
+setopt nohup
+
 #--------------------
 #  Prompt
 #--------------------
