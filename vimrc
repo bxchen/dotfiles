@@ -7,7 +7,7 @@
 "au BufNewFile,BufRead *.cu set ft=cu
 
 set cursorline      " cursor highlighting
-:hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=lightgray guifg=white
+":hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=lightgray guifg=white
 ":hi CursorColumn cterm=NONE ctermbg=gray ctermfg=white guibg=gray guifg=white
 :nnoremap <Leader>c :set cursorline! <CR>
 
