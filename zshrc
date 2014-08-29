@@ -70,8 +70,8 @@ if [[ $platform == 'Linux' ]]; then
 	alias ls="ls --color -F"
 	alias ll="ls --color -lh"
     alias workhorse='ssh -X workhorse'
-    #alias hercules='ssh -X hercules'
-    alias hercules='ssh -X 128.135.74.214'
+    alias hercules='ssh -X hercules'
+    #alias hercules='ssh -X 128.135.74.214'
     alias nether='ssh -X nether'
     alias titanomachy='ssh -X titanomachy'
     alias midway='ssh -X bxchen@midway.rcc.uchicago.edu'
