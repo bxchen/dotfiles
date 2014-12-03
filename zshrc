@@ -143,4 +143,4 @@ fi
 # Environment Variables 
 #------------------------------
 #
-export PYTHONPATH=${PYTHONPATH}:${HOME}/python/dev:${HOME}/python
+export PYTHONPATH=${PYTHONPATH}:${HOME}/python
