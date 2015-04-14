@@ -8,10 +8,11 @@ This repo contains most of my configuration file for working environment includi
 - vim (directory)
 
 ## Installation
-clone the repository to the home directory and run the setup script
+clone the repository to the home directory, together with the submodules, and run the setup script
 
     cd ~
     git clone git@bitbucket.org:bxchen/dotfiles.git && cd dotfiles
+    git submodules init && git submodules update
     bash setup.sh
 
 ### notes on the `setup.sh`
