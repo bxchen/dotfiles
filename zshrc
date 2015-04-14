@@ -26,13 +26,13 @@ autoload -U colors && colors
 
 ## add git-prompt
 #fpath=(~/dotfiles/git-prompt $fpath)
-source ~/dotfiles/git-prompt/zshrc.sh
+source ~/dotfiles/zsh/zsh-git-prompt/zshrc.sh
 local gitprompt='$(git_super_status)'
 PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:%{$reset_color%}%2~%{$reset_color%}${gitprompt}% [%{$fg_no_bold[green]%}%*%{$reset_color%}]%# "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 ## add git-flow-completion
-source ~/dotfiles/git-flow-completion/git-flow-completion.zsh
+source ~/dotfiles/zsh/git-flow-completion/git-flow-completion.zsh
 
 # autocompletion with an arrow-key driven interface
 zstyle ':completion:*' menu select

@@ -4,3 +4,9 @@
 [submodule "vim/bundle/vim-togglemouse"]
 	path = vim/bundle/vim-togglemouse
 	url = https://github.com/nvie/vim-togglemouse.git
+[submodule "zsh/git-flow-completion"]
+	path = zsh/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion.git
+[submodule "zsh/zsh-git-prompt"]
+	path = zsh/zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
