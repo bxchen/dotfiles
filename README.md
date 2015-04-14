@@ -9,9 +9,9 @@ This repo contains most of my configuration file for working environment includi
 
 ## Installation
 clone the repository to the home directory and run the setup script
-`cd ~`
-`git clone git@bitbucket.org:bxchen/dotfiles.git && cd dotfiles`
-`bash setup.sh`
+`cd ~
+git clone git@bitbucket.org:bxchen/dotfiles.git && cd dotfiles
+bash setup.sh`
 
 ### notes on the `setup.sh`
 1. move existing config files in `$HOME` to a backup directory
