@@ -159,6 +159,8 @@ set pastetoggle=<F2>
 " a simple Vim plugin: vim-togglemouse has been installed and <F12> is now the
 " key to toggle the mouse between Vim and terminal.
 
+" run flake8 check everytime writing to a Python file
+"autocmd BufWritePost *.py call Flake8()
 
 """"""""""""""""""""""""""""""""""""""""""""
 " 3. Get efficient - shortcut mapping
