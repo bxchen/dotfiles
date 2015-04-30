@@ -68,8 +68,8 @@ setopt pushdminus
 #--------------------
 # get the platform of the current machine
 platform=$(uname);
-# If the platform is Linux
-if [[ $platform == 'Linux' ]]; then
+# If the platform is Linux (native or cygwin)
+if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
     alias ls="ls --color -F"
     alias ll="ls --color -lh"
     alias workhorse='ssh -X workhorse'
