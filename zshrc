@@ -68,20 +68,21 @@ setopt pushdminus
 #--------------------
 # get the platform of the current machine
 platform=$(uname);
-# If the platform is Linux, try an apt-get to install zsh and then recurse
-if [[ $platform == 'Linux' ]]; then
-	alias ls="ls --color -F"
-	alias ll="ls --color -lh"
+# If the platform is Linux (native or cygwin)
+if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
+    alias ls="ls --color -F"
+    alias ll="ls --color -lh"
     alias workhorse='ssh -X workhorse'
     alias hercules='ssh -X hercules'
     #alias hercules='ssh -X 128.135.74.214'
     alias nether='ssh -X nether'
     alias titanomachy='ssh -X titanomachy'
     alias midway='ssh -X bxchen@midway.rcc.uchicago.edu'
-# If the platform is OS X, tell the user to install zsh :)
+# If the platform is OS X
 elif [[ $platform == 'Darwin' ]]; then
-	alias ls="ls -GF"
-	alias ll="ls -lhG"
+    alias ls="ls -GF"
+    alias ll="ls -lhG"
+    alias router='ssh router'
 fi
 
 alias pet1='ssh -X pet1'
