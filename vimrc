@@ -159,6 +159,12 @@ set pastetoggle=<F2>
 " a simple Vim plugin: vim-togglemouse has been installed and <F12> is now the
 " key to toggle the mouse between Vim and terminal.
 
+" have vimdiff ignore whitespace while normal vim doesn't
+if &diff
+    " diff mode
+    set diffopt+=iwhite
+endif
+
 
 """"""""""""""""""""""""""""""""""""""""""""
 " 3. Get efficient - shortcut mapping
