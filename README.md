@@ -12,7 +12,7 @@ clone the repository to the home directory, together with the submodules, and ru
 
     cd ~
     git clone git@bitbucket.org:bxchen/dotfiles.git && cd dotfiles
-    git submodules init && git submodules update
+    git submodule init && git submodule update
     bash setup.sh
 
 ### notes on the `setup.sh`
