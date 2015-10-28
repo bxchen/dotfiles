@@ -46,6 +46,9 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
+" put the current working directory in the xterm on exit
+let &titleold=getcwd()
+
 """""""""""""""""""""""""""""""
 " example vimrc from ArchWiki
 """""""""""""""""""""""""""""""
