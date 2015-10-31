@@ -150,6 +150,6 @@ fi
 #------------------------------
 #
 export PYTHONPATH=${PYTHONPATH}:${HOME}/python
-
+export TERM=xterm-256color
 
 eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/uofc)
