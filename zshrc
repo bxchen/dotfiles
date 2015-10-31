@@ -150,6 +150,13 @@ fi
 #------------------------------
 #
 export PYTHONPATH=${PYTHONPATH}:${HOME}/python
+
 export TERM=xterm-256color
+# for tmux: export 256color
+# trimmed down version from the solution in this post
+# https://www.reddit.com/r/vim/comments/1a29vk/fixing_vims_background_color_erase_for_256color/
+if [ -n "$TMUX" ]; then
+    export TERM=screen-256color
+fi
 
 eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/uofc)
