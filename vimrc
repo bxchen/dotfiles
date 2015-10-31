@@ -49,6 +49,11 @@ endif
 " put the current working directory in the xterm on exit
 let &titleold=getcwd()
 
+" enable 256-color mode
+set t_Co=256
+" load zenburn colorscheme automatically
+colors zenburn
+
 """""""""""""""""""""""""""""""
 " example vimrc from ArchWiki
 """""""""""""""""""""""""""""""

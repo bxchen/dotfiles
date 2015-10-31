@@ -77,6 +77,8 @@ if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
     #alias hercules='ssh -X 128.135.74.214'
     alias nether='ssh -X nether'
     alias titanomachy='ssh -X titanomachy'
+    alias romulus='ssh -X romulus'
+    alias remus='ssh -X remus'
     alias midway='ssh -X bxchen@midway.rcc.uchicago.edu'
 # If the platform is OS X
 elif [[ $platform == 'Darwin' ]]; then
@@ -148,3 +150,6 @@ fi
 #------------------------------
 #
 export PYTHONPATH=${PYTHONPATH}:${HOME}/python
+
+
+eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/uofc)
