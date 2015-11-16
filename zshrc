@@ -149,6 +149,8 @@ fi
 # Environment Variables 
 #------------------------------
 #
+export PATH=~/bin:$PATH
+
 export PYTHONPATH=${PYTHONPATH}:${HOME}/python
 
 export TERM=xterm-256color
@@ -158,5 +160,3 @@ export TERM=xterm-256color
 if [ -n "$TMUX" ]; then
     export TERM=screen-256color
 fi
-
-eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/uofc)
