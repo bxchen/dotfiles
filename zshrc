@@ -177,8 +177,11 @@ if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 
 else
     eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile" 2>/dev/null)"
 fi
+
 export GPG_AGENT_INFO  # the env file does not contain the export statement
-export SSH_AUTH_SOCK   # enable gpg-agent for ssh
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+    export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"   # enable gpg-agent for ssh
+fi
 
 #------------------------------
 # Environment Variables 
