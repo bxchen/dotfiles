@@ -72,14 +72,14 @@ platform=$(uname);
 if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
     alias ls="ls --color -F"
     alias ll="ls --color -lh"
-    alias workhorse='ssh -X workhorse'
-    alias hercules='ssh -X hercules'
-    #alias hercules='ssh -X 128.135.74.214'
-    alias nether='ssh -X nether'
-    alias titanomachy='ssh -X titanomachy'
-    alias romulus='ssh -X romulus'
-    alias remus='ssh -X remus'
-    alias midway='ssh -X bxchen@midway.rcc.uchicago.edu'
+    alias workhorse='ssh -Y workhorse'
+    alias hercules='ssh -Y hercules'
+    #alias hercules='ssh -Y 128.135.74.214'
+    alias nether='ssh -Y nether'
+    alias titanomachy='ssh -Y titanomachy'
+    alias romulus='ssh -Y romulus'
+    alias remus='ssh -Y remus'
+    alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
 # If the platform is OS X
 elif [[ $platform == 'Darwin' ]]; then
     alias ls="ls -GF"
@@ -87,8 +87,8 @@ elif [[ $platform == 'Darwin' ]]; then
     alias router='ssh router'
 fi
 
-alias pet1='ssh -X pet1'
-alias siraf='ssh -X siraf-login'
+alias pet1='ssh -Y pet1'
+alias siraf='ssh -Y siraf-login'
 
 #--------------------
 # Key bindings
