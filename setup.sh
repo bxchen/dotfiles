@@ -7,8 +7,8 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="zshrc bashrc vimrc vim"    # list of files/folders to symlink in homedir
+olddir=~/.dotfiles_old            # old dotfiles backup directory
+files="zshrc bashrc vimrc vim ssh/config"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,6 +29,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
