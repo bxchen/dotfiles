@@ -151,24 +151,34 @@ fi
 # https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
 #------------------------------
 # 
-# Start the gpg-agent if not already running
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-gpg-connect-agent /bye >/dev/null 2>&1
+# # Start the gpg-agent if not already running
+# if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+# gpg-connect-agent /bye >/dev/null 2>&1
+# fi
+# 
+# # Set SSH to use gpg-agent
+# unset SSH_AGENT_PID
+# if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+# export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+# fi
+# 
+# # Set GPG TTY
+# GPG_TTY=$(tty)
+# export GPG_TTY
+# 
+# # Refresh gpg-agent tty in case user switches into an X session
+# gpg-connect-agent updatestartuptty /bye >/dev/null
+# 
+#
+# https://wiki.archlinux.org/index.php/GnuPG#gpg-agent
+envfile="$HOME/.gnupg/gpg-agent.env"
+if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
+    eval "$(cat "$envfile")"
+else
+    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
 fi
-
-# Set SSH to use gpg-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-fi
-
-# Set GPG TTY
-GPG_TTY=$(tty)
-export GPG_TTY
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
+export GPG_AGENT_INFO  # the env file does not contain the export statement
+export SSH_AUTH_SOCK   # enable gpg-agent for ssh
 
 #------------------------------
 # Environment Variables 
