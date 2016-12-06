@@ -1,11 +1,23 @@
+# set history
+HISTSIZE=999999999
+SAVEHIST=999999999
+HISTFILE=~/.zsh_history
+#setopt appendhistory
+# append history immediately, not when shell exits
+setopt INC_APPEND_HISTORY
+# share history between all sessions
+setopt SHARE_HISTORY
+# ignore duplicate lines in the history
+setopt HIST_IGNORE_DUPS
+# extended history with time stamp
+setopt EXTENDED_HISTORY
+
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory extendedglob
+setopt extendedglob
 unsetopt notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/bxchen/.zshrc'
 
@@ -39,9 +51,6 @@ zstyle ':completion:*' menu select
 
 # autocompletion of command line switches for aliases
 setopt completealiases
-
-# ignore duplicate lines in the history
-setopt HIST_IGNORE_DUPS
 
 # Directory stack
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
@@ -151,23 +160,22 @@ fi
 # https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
 #------------------------------
 # 
-# Start the gpg-agent if not already running
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-gpg-connect-agent /bye >/dev/null 2>&1
-fi
-
-# Set SSH to use gpg-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-fi
-
-# Set GPG TTY
-GPG_TTY=$(tty)
-export GPG_TTY
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
+# # Start the gpg-agent if not already running
+# if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+#     gpg-connect-agent /bye >/dev/null 2>&1
+# fi
+# 
+# # Set SSH to use gpg-agent
+# unset SSH_AGENT_PID
+# if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+#     export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+# fi
+# 
+# # Set GPG TTY
+# export GPG_TTY=$(tty)
+# 
+# # Refresh gpg-agent tty in case user switches into an X session
+# gpg-connect-agent updatestartuptty /bye >/dev/null
 
 
 # https://wiki.archlinux.org/index.php/GnuPG#gpg-agent
@@ -238,8 +246,9 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 #------------------------------
 #
 export PATH=~/bin:$PATH
-
 export PYTHONPATH=${PYTHONPATH}:${HOME}/python
+
+export EDITOR=$(which vim)
 
 export TERM=xterm-256color
 # for tmux: export 256color
