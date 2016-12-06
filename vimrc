@@ -176,6 +176,9 @@ endif
 " run flake8 check everytime writing to a Python file
 "autocmd BufWritePost *.py call Flake8()
 
+"always display the airline status bar
+set laststatus=2
+
 """"""""""""""""""""""""""""""""""""""""""""
 " 3. Get efficient - shortcut mapping
 """"""""""""""""""""""""""""""""""""""""""""
