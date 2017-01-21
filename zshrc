@@ -268,8 +268,9 @@ if [ -n "$TMUX" ]; then
 		TMUX_ENV_DISPLAY=$(tmux show-environment | grep "^DISPLAY")
 		[[ -n "$TMUX_ENV_DISPLAY" ]] && export "$TMUX_ENV_DISPLAY"
 	}
-#else
+else
 #	function refresh { }
+	function refresh_tmux_env { }
 fi
 
 function preexec {
