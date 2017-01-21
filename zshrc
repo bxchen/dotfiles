@@ -256,4 +256,23 @@ export TERM=xterm-256color
 # https://www.reddit.com/r/vim/comments/1a29vk/fixing_vims_background_color_erase_for_256color/
 if [ -n "$TMUX" ]; then
     export TERM=screen-256color
+# 	function refresh {
+# 		export $(tmux show-environment | grep "^SSH_AUTH_SOCK")
+# 		export $(tmux show-environment | grep "^DISPLAY")
+# 	}
+	function refresh_tmux_env {
+# 		TMUX_ENV_GAN=$(tmux show-environment | grep "^GIT_AUTHOR_NAME")
+# 		[[ -n "$TMUX_ENV_GAN" ]] && export "$TMUX_ENV_GAN"
+		TMUX_ENV_SSH_AUTH_SOCK=$(tmux show-environment | grep "^SSH_AUTH_SOCK")
+		[[ -n "$TMUX_ENV_SSH_AUTH_SOCK" ]] && export "$TMUX_ENV_SSH_AUTH_SOCK"
+		TMUX_ENV_DISPLAY=$(tmux show-environment | grep "^DISPLAY")
+		[[ -n "$TMUX_ENV_DISPLAY" ]] && export "$TMUX_ENV_DISPLAY"
+	}
+#else
+#	function refresh { }
 fi
+
+function preexec {
+#     refresh
+	refresh_tmux_env
+}
