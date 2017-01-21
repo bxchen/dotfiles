@@ -15,7 +15,7 @@ execute pathogen#infect()
 call pathogen#helptags()
 
 " change the mapleader from \ to ,
-let mapleader=","
+"let mapleader=","
 
 " quickly edit/reload the vimrc file
 " ev - edit vim
@@ -191,10 +191,10 @@ vmap Q gq
 nmap Q gqap
 
 " stop using arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 " clears the search highlighting buffer
 nmap <slient> ./ :nosearch<CR>
