@@ -28,13 +28,19 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " 1. some basic Vim behaviour
 """"""""""""""""""""""""""""""""""""""""""""
 
+" enable 256-color mode
+set t_Co=256
+" load zenburn colorscheme automatically
+colors zenburn
+
 " have unwritten changes to a file and open a new file using :e, without being
 " forced to write or undo your changes first
 set hidden
 
 " cursor highlighting
-set cursorline      
+set cursorline
 :nnoremap <Leader>c :set cursorline! <CR>
+:hi CursorLine gui=underline cterm=underline
 ":hi CursorLine   cterm=NONE ctermbg=darkblue ctermfg=white guibg=lightgray guifg=white
 ":hi CursorColumn cterm=NONE ctermbg=gray ctermfg=white guibg=gray guifg=white
 
@@ -48,11 +54,6 @@ endif
 
 " put the current working directory in the xterm on exit
 let &titleold=getcwd()
-
-" enable 256-color mode
-set t_Co=256
-" load zenburn colorscheme automatically
-colors zenburn
 
 """""""""""""""""""""""""""""""
 " example vimrc from ArchWiki
