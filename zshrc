@@ -174,7 +174,7 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 #------------------------------
 #
 export PATH=~/bin:$PATH
-export PYTHONPATH=${PYTHONPATH}:${HOME}/python
+# export PYTHONPATH=${PYTHONPATH}:${HOME}/python
 
 export EDITOR=$(which vim)
 
@@ -205,3 +205,12 @@ function preexec {
 #     refresh
 	refresh_tmux_env
 }
+
+
+#------------------------------
+# For miniconda 
+#------------------------------
+#
+# added by Miniconda2 4.3.11 installer
+export PATH=/home/bxchen/miniconda2/bin:$PATH
+
