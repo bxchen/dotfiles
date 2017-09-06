@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "zsh/conda-zsh-completion"]
+	path = zsh/conda-zsh-completion
+	url = https://github.com/esc/conda-zsh-completion.git
