@@ -216,3 +216,4 @@ export PATH=/home/bxchen/miniconda2/bin:$PATH
 # for tab completion in zsh
 fpath+=/home/bxchen/dotfiles/zsh/conda-zsh-completion
 compinit conda
+zstyle ':completion::complete:*' use-cache 1
