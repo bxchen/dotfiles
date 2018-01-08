@@ -161,12 +161,13 @@ fi
 # https://wiki.archlinux.org/index.php/GnuPG
 #------------------------------
 # 
-# Set GPG TTY
-export GPG_TTY=$(tty)
+if [[ $platform == 'Linux' ]]; then
+    # Set GPG TTY
+    export GPG_TTY=$(tty)
 
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
+    # Refresh gpg-agent tty in case user switches into an X session
+    gpg-connect-agent updatestartuptty /bye >/dev/null
+fi
 
 
 #------------------------------
@@ -212,8 +213,15 @@ function preexec {
 #------------------------------
 #
 # added by Miniconda2 4.3.11 installer
-export PATH=/home/bxchen/miniconda2/bin:$PATH
 # for tab completion in zsh
-fpath+=/home/bxchen/dotfiles/zsh/conda-zsh-completion
+# If the platform is Linux (native or cygwin)
+if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
+    export PATH=/home/bxchen/miniconda2/bin:$PATH
+    fpath+=/home/bxchen/dotfiles/zsh/conda-zsh-completion
+# If the platform is OS X
+elif [[ $platform == 'Darwin' ]]; then
+    export PATH="/Users/bxchen/miniconda2/bin:$PATH"
+    fpath+=/Users/bxchen/dotfiles/zsh/conda-zsh-completion
+fi
 compinit conda
 zstyle ':completion::complete:*' use-cache 1
