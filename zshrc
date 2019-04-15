@@ -225,3 +225,12 @@ elif [[ $platform == 'Darwin' ]]; then
 fi
 compinit conda
 zstyle ':completion::complete:*' use-cache 1
+
+
+#------------------------------
+# For xclip
+#------------------------------
+#
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+#
