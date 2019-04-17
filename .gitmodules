@@ -19,3 +19,6 @@
 [submodule "zsh/conda-zsh-completion"]
 	path = zsh/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
