@@ -19,7 +19,7 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/bxchen/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -43,8 +43,8 @@ local gitprompt='$(git_super_status)'
 PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m:%{$reset_color%}%2~%{$reset_color%}${gitprompt}% [%{$fg_no_bold[green]%}%*%{$reset_color%}]%# "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
-## add git-flow-completion
-source ~/dotfiles/zsh/git-flow-completion/git-flow-completion.zsh
+#### add git-flow-completion
+##source ~/dotfiles/zsh/git-flow-completion/git-flow-completion.zsh
 
 # autocompletion with an arrow-key driven interface
 zstyle ':completion:*' menu select
@@ -82,23 +82,11 @@ platform=$(uname);
 if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
     alias ls="ls --color -F"
     alias ll="ls --color -lh"
-    alias workhorse='ssh -Y workhorse'
-    alias hercules='ssh -Y hercules'
-    #alias hercules='ssh -Y 128.135.74.214'
-    alias nether='ssh -Y nether'
-    alias titanomachy='ssh -Y titanomachy'
-    alias romulus='ssh -Y romulus'
-    alias remus='ssh -Y remus'
-    alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
 # If the platform is OS X
 elif [[ $platform == 'Darwin' ]]; then
     alias ls="ls -GF"
     alias ll="ls -lhG"
-    alias router='ssh router'
 fi
-
-alias pet1='ssh -Y pet1'
-alias siraf='ssh -Y siraf-login'
 
 #--------------------
 # Key bindings
@@ -156,22 +144,6 @@ fi
 
 
 #------------------------------
-# gpg-agent
-# script from archlinux wiki
-# https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent
-# https://wiki.archlinux.org/index.php/GnuPG
-#------------------------------
-# 
-if [[ $platform == 'Linux' ]]; then
-    # Set GPG TTY
-    export GPG_TTY=$(tty)
-
-    # Refresh gpg-agent tty in case user switches into an X session
-    gpg-connect-agent updatestartuptty /bye >/dev/null
-fi
-
-
-#------------------------------
 # Environment Variables 
 #------------------------------
 #
@@ -210,28 +182,25 @@ function preexec {
 
 
 #------------------------------
-# For miniconda 
-#------------------------------
-#
-# added by Miniconda2 4.3.11 installer
-# for tab completion in zsh
-# If the platform is Linux (native or cygwin)
-if [[ $platform == 'Linux' ]] || [[ $platform =~ "CYGWIN" ]]; then
-    export PATH=/home/bxchen/miniconda2/bin:$PATH
-    fpath+=/home/bxchen/dotfiles/zsh/conda-zsh-completion
-# If the platform is OS X
-elif [[ $platform == 'Darwin' ]]; then
-    export PATH="/Users/bxchen/miniconda2/bin:$PATH"
-    fpath+=/Users/bxchen/dotfiles/zsh/conda-zsh-completion
-fi
-compinit conda
-zstyle ':completion::complete:*' use-cache 1
-
-
-#------------------------------
 # For xclip
 #------------------------------
 #
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
 #
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/bxchen/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/bxchen/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/bxchen/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/bxchen/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

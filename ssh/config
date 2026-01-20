@@ -1,47 +1,16 @@
-Host workhorse
-    HostName workhorse.bsd.uchicago.edu
-    User bxchen
-    ForwardX11 yes
-    ForwardAgent yes
-
-Host hercules
-    HostName hercules.bsd.uchicago.edu
-    User bxchen
-    ForwardX11 yes
-    ForwardAgent yes
-
-Host nether
-    HostName nether.bsd.uchicago.edu
-    User bxchen
-    ForwardX11 yes
-    ForwardAgent yes
-
-Host titanomachy
-    HostName titanomachy.bsd.uchicago.edu
-    User bxchen
-    ForwardX11 yes
-    ForwardAgent yes
-
-Host remus
-    HostName remus.uchicago.edu
-    User bxchen
-    ForwardX11Trusted yes
-    ForwardAgent yes
-
-Host romulus
-    HostName romulus.uchicago.edu
-    User bxchen
-    ForwardX11 yes
-    ForwardAgent yes
-
-Host siraf-login
-    HostName siraf-login.bsd.uchicago.edu
-    User bxchen
-    ForwardX11 yes
-    ForwardAgent yes 
-
 Host bitbucket.org
     HostName bitbucket.org
     User git
     IdentityFile ~/.ssh/bitBkt
     ForwardX11 no
+
+Host github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/github_key
+
+Host pknas
+    HostName 10.0.0.154
+    User bxchen
+    ForwardAgent yes
+    IdentityFile ~/.ssh/homelab

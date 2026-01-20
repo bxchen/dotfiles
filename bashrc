@@ -26,14 +26,5 @@
 #export PILOTRATE=115200
 
 test -s ~/.alias && . ~/.alias || true
-export PATH=$PATH:/sbin:/usr/local/sbin:/home/bxchen/.local/bin:/usr/local/texlive/2013/bin/x86_64-linux
-export INFOPATH=$INFOPATH:/usr/local/texlive/2013/texmf-dist/doc/info
-export MANPATH=$MANPATH:/usr/local/texlive/2013/texmf-dist/doc/man
+export PATH=$PATH:/sbin:/usr/local/sbin:$HOME/.local/bin:
 #. /usr/local/itt/idl82/bin/idl_setup.bash
-alias rdesktop_spem='rdesktop -u imglab -p imglab 205.208.91.164 -g 1920x1150'
-alias siraf='ssh -Y bxchen@siraf-login'
-alias titanomachy='ssh -Y bxchen@titanomachy'
-alias nether='ssh -Y bxchen@nether'
-alias hercules='ssh -Y bxchen@hercules'
-alias workhorse='ssh -Y bxchen@workhorse'
-alias midway='ssh -Y bxchen@midway.rcc.uchicago.edu'
